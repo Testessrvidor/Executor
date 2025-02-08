@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testador de HTML, CSS e JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Executor de HTML, CSS e JavaScript</h1>
+        <p>Digite seu código abaixo e veja o resultado!</p>
+    </header>
+
+    <main>
+        <!-- Área de Entrada de Código -->
+        <div class="code-container">
+            <div class="code-box">
+                <h2><i class="fas fa-code"></i> HTML</h2>
+                <textarea id="html-code" placeholder="Digite seu código HTML aqui..."></textarea>
+            </div>
+            <div class="code-box">
+                <h2><i class="fab fa-css3-alt"></i> CSS</h2>
+                <textarea id="css-code" placeholder="Digite seu código CSS aqui..."></textarea>
+            </div>
+            <div class="code-box">
+                <h2><i class="fab fa-js-square"></i> JavaScript</h2>
+                <textarea id="js-code" placeholder="Digite seu código JavaScript aqui..."></textarea>
+            </div>
+        </div>
+
+        <!-- Botão de Execução -->
+        <button id="run-btn"><i class="fas fa-play"></i> Executar Código</button>
+
+        <!-- Área de Visualização -->
+        <div class="output-container">
+            <h2><i class="fas fa-eye"></i> Resultado</h2>
+            <iframe id="output-frame"></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Executor de Códigos.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

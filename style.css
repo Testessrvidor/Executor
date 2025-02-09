@@ -9,9 +9,15 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    background-color: #f4f4f9; /* Fundo claro */
+    color: #333; /* Texto escuro */
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
     background-color: #1e1e2f; /* Fundo escuro */
     color: #e0e0e0; /* Texto claro */
-    padding: 20px;
 }
 
 header {
@@ -27,7 +33,26 @@ header h1 {
 
 header p {
     font-size: 1.1rem;
+    color: #666;
+}
+
+body.dark-mode header p {
     color: #a1a1a1;
+}
+
+#theme-toggle {
+    background-color: #6a11cb;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #4d0a9e;
 }
 
 /* Contêiner de Códigos */
@@ -39,16 +64,20 @@ header p {
 
 .code-box {
     flex: 1;
-    background-color: #2a2a3f; /* Fundo escuro para as caixas */
+    background-color: #fff; /* Fundo claro */
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .code-box {
+    background-color: #2a2a3f; /* Fundo escuro */
 }
 
 .code-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .code-box h2 {
@@ -68,13 +97,19 @@ header p {
     width: 100%;
     height: 150px;
     padding: 10px;
-    border: 1px solid #444;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    font-family: 'Fira Code', monospace; /* Fonte monoespaçada */
+    font-family: 'Fira Code', monospace;
     font-size: 1rem;
+    background-color: #f4f4f9; /* Fundo claro */
+    color: #333; /* Texto escuro */
+    resize: vertical;
+}
+
+body.dark-mode .code-box textarea {
     background-color: #1e1e2f; /* Fundo escuro */
     color: #e0e0e0; /* Texto claro */
-    resize: vertical;
+    border-color: #444;
 }
 
 .code-box textarea:focus {
@@ -82,32 +117,41 @@ header p {
     outline: none;
 }
 
-/* Botão de Execução */
-#run-btn {
-    display: block;
-    width: 100%;
+/* Botões de Controle */
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    flex: 1;
     padding: 15px;
-    background-color: #6a11cb; /* Roxo vibrante */
+    background-color: #6a11cb;
     color: #fff;
     border: none;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#run-btn:hover {
-    background-color: #4d0a9e; /* Roxo mais escuro */
+.controls button:hover {
+    background-color: #4d0a9e;
     transform: scale(1.02);
 }
 
 /* Área de Visualização */
 .output-container {
     margin-top: 20px;
-    background-color: #2a2a3f; /* Fundo escuro */
+    background-color: #fff; /* Fundo claro */
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .output-container {
+    background-color: #2a2a3f; /* Fundo escuro */
 }
 
 .output-container h2 {
@@ -119,9 +163,14 @@ header p {
 #output-frame {
     width: 100%;
     height: 300px;
-    border: 1px solid #444;
+    border: 1px solid #ddd;
     border-radius: 8px;
+    background-color: #fff; /* Fundo claro */
+}
+
+body.dark-mode #output-frame {
     background-color: #1e1e2f; /* Fundo escuro */
+    border-color: #444;
 }
 
 /* Rodapé */
@@ -129,13 +178,62 @@ footer {
     text-align: center;
     margin-top: 30px;
     padding: 15px;
-    background-color: #2a2a3f; /* Fundo escuro */
-    color: #a1a1a1;
+    background-color: #6a11cb; /* Roxo vibrante */
+    color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .code-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .code-box {
+        padding: 15px;
+    }
+
+    .code-box h2 {
+        font-size: 1.3rem;
+    }
+
+    .code-box textarea {
+        height: 120px;
+    }
+
+    .controls button {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .output-container {
+        padding: 15px;
+    }
+
+    .output-container h2 {
+        font-size: 1.3rem;
+    }
+
+    #output-frame {
+        height: 200px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
 }

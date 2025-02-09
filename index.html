@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/theme/dracula.min.css">
 </head>
 <body>
     <header>
         <h1>Executor de HTML, CSS e JavaScript</h1>
         <p>Digite seu código abaixo e veja o resultado!</p>
+        <button id="theme-toggle"><i class="fas fa-moon"></i> Tema Escuro</button>
     </header>
 
     <main>
@@ -31,8 +34,11 @@
             </div>
         </div>
 
-        <!-- Botão de Execução -->
-        <button id="run-btn"><i class="fas fa-play"></i> Executar Código</button>
+        <!-- Botões de Controle -->
+        <div class="controls">
+            <button id="run-btn"><i class="fas fa-play"></i> Executar Código</button>
+            <button id="clear-btn"><i class="fas fa-trash"></i> Limpar Códigos</button>
+        </div>
 
         <!-- Área de Visualização -->
         <div class="output-container">
@@ -42,9 +48,13 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Executor de Códigos.</p>
+        <p>&copy; 2025 Testador de Códigos. </p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
